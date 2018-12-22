@@ -1,0 +1,8 @@
+.erlang.mk/
+_rel/
+deps/
+rel/
+erl_crash.dump/
+erlang.mk/
+hello_erlang2.d/
+relx.config/
