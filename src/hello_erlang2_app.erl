@@ -11,7 +11,7 @@
 
 start(_Type, _Args) ->
 	 Dispatch = cowboy_router:compile([
-        {"/", cowboy_static, {priv_file, hello_erlang2, "index.html"}}
+        {"/", cowboy_static, {priv_file, hello_erlang2_app, "index.html"}}
     ]),
     {ok, _} = cowboy:start_clear(my_http_listener,
        [{port, 8080}],
