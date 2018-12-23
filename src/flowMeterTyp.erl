@@ -13,7 +13,7 @@ init() ->
 loop() -> 
 	receive
 		{initial_state, [MeterInst_Pid, [ResInst_Pid, RealWorldCmdFn]], ReplyFn} ->
-			{ok, [L | _ ] } = resource_instance:get_locations_list(ResInst_Pid),
+			{ok, [L | _ ] } = resource_instance:list_locations(ResInst_Pid),
 			{ok, Fluidum} = location:get_Visitor(L),
 			ReplyFn(#{meterInst => MeterInst_Pid, resInst => ResInst_Pid, 
 					  fluidum => Fluidum, rw_cmd => RealWorldCmdFn}), 
@@ -38,9 +38,9 @@ computeFlow(ResCircuit) ->
 	{ok, InfluenceFnCircuit} = influence(maps:next(maps:iterator(ResCircuit)), []),
 	compute(Interval, InfluenceFnCircuit).
 
-influence({C, _ , Iter }, Acc) ->
-		{ok, InflFn} = apply(resource_instance, get_flow_influence, [C]),
-		influence(maps:next(Iter), [ InflFn | Acc ] );
+%influence({C, _ , Iter }, Acc) ->
+%		{ok, InflFn} = apply(resource_instance, get_flow_influence, [C]),
+%		influence(maps:next(Iter), [ InflFn | Acc ] );
 
 influence(none, Acc) -> {ok, Acc}. 
 
