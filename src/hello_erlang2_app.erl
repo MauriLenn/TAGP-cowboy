@@ -6,7 +6,12 @@
 
 
 start(_Type, _Args) ->
-	Dispatch = cowboy_router:compile([ {'_', [{"/", cowboy_static, {priv_file, hello_erlang2, "index.html"}}]}]),
+	Dispatch = cowboy_router:compile([ {'_', [
+                                                {"/", cowboy_static, {priv_file, hello_erlang2, "main.html"}},
+                                                {"/square_installations/[...]", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes.html"}}
+                                        ]}
+                                    ]),
+    
     %Dispatch = cowboy_router:compile([ {'_', [{"/", hello_handler, []}]}]),
     {ok, _} = cowboy:start_clear(my_http_listener,
        [{port, 8080}],
