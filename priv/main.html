@@ -22,7 +22,7 @@
         <h1>Installation with a pump</h1>
           <p> this installation has only pipes with connectors<br> 
               In the square, there is a pump that keeps the fluidum flowing in the installation</p>
-          <button id="pipes_pump"> Square installation </button>
+          <button id="pipes_pump" onclick="pipesPumpdir()"> Square installation </button>
     </div>
 
     <div>
@@ -30,7 +30,7 @@
             <p> this installation has only pipes with connectors<br> 
                 In the square, there is a pump that keeps the fluidum flowing in the installation. <br> 
                 Besides that, there is a flowmeter equiped as a pipe.</p>
-            <button id="pipes_pump_flowmeter"> Square installation </button>
+            <button id="pipes_pump_flowmeter" onclick="pipesPumpFLowmeterdir()"> Square installation </button>
     </div>
 
     <div>
@@ -38,7 +38,7 @@
             <p> this installation has only pipes with connectors<br> 
                 In the square, there is a pump that keeps the fluidum flowing in the installation. <br> 
                 Besides that, there is a flowmeter equiped as a pipe and a heat exchanger equiped as a pipe.</p>
-            <button id="pipes_pump_flowmeter_heatexchanger"> Square installation </button>
+            <button id="pipes_pump_flowmeter_heatexchanger" onclick="pipesPumpFLowmeterHeatexdir()"> Square installation </button>
     </div>
 
   <div>
@@ -47,7 +47,16 @@
   
   <script type="text/javascript">
         function pipesdir() {
-         window.location.href = "http://localhost:8080/square_installations/pipes.html";
+         window.location.href = "http://localhost:8080/square_installations/pipes";
+        }
+        function pipesPumpdir() {
+         window.location.href = "http://localhost:8080/square_installations/pipes_pump";
+        }
+        function pipesPumpFLowmeterdir() {
+         window.location.href = "http://localhost:8080/square_installations/pipes_pump_flowmeter";
+        }
+        function pipesPumpFLowmeterHeatexdir() {
+         window.location.href = "http://localhost:8080/square_installations/pipes_pump_flowmeter_heatexchanger";
         }
     </script>
 

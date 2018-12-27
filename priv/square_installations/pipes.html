@@ -2,13 +2,23 @@
 <head>
         <meta charset=\"utf-8\">
         <title>Pipes</title>
-        
+        <style>
+          button{
+            margin-top: 30px;
+          }
+        </style>
 </head>
 <body>
   <div>
     <h1>Square Installation</h1>
       <p> this installation has only pipes with connectors, connected in a square</p>
+      <button id="pipes" onclick="getImage()"> get image </button>
   </div>
  
+  <script type="text/javascript"> 
+    function getImage() {
+         window.location.href = "http://localhost:8080/square_installations/pipes/image";
+        }
+  </script>
 </body>
 </html>
