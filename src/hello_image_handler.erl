@@ -1,4 +1,4 @@
--module(hello_handler).
+-module(hello_image_handler).
 -behavior(cowboy_handler).
 
 -export([init/2]).

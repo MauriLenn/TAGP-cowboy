@@ -6,7 +6,7 @@ start() ->
 	register(survivor, spawn(?MODULE, init, [])).
 
 entry(Data)-> 
-	ets:insert(logboek, {{now(), self()}, Data}). 
+	ets:insert(logboek, {{erlang:timestamp(), self()}, Data}). 
 
 init() -> 
 	(ets:info(logboek) =:= undefined) orelse ets:delete(logboek),
