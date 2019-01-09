@@ -23,19 +23,21 @@ loop() ->
 			loop();
 		{locations_list, _State, ReplyFn} -> 
 			ReplyFn([]),
+			loop();
+		{resource_circuit, State, ReplyFn} -> 
+			#{circuit := C} = State, 
+			{_RootC, CircuitMap} = C, 
+			ReplyFn(extract(CircuitMap)),
 			loop()
-		%{resource_circuit, State, ReplyFn} -> 
-		%	{RootC, CircuitMap} = C, ReplyFn(extract(CircuitMap)), 
-		%	loop()
 	end. 
 
-%extract(C) -> extract(maps:next(maps:iterator(C)), #{}).
+extract(C) -> extract(maps:next(maps:iterator(C)), #{}).
 
-%extract({C, _ , Iter }, ResLoop) ->
-%		{ok, ResPid} = connector:get_ResInst(C),
-%		extract(maps:next(Iter), ResLoop#{ResPid => processed});
+extract({C, _ , Iter }, ResLoop) ->
+		{ok, ResPid} = connector:get_ResInst(C),
+		extract(maps:next(Iter), ResLoop#{ResPid => processed});
 
-%extract( none , ResLoop) -> ResLoop. 
+extract( none , ResLoop) -> ResLoop. 
 
 discover_circuit(Root_Pid) -> 
 	{ok,  Circuit} = discover_circuit([Root_Pid], #{  }),

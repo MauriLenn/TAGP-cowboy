@@ -38,9 +38,9 @@ computeFlow(ResCircuit) ->
 	{ok, InfluenceFnCircuit} = influence(maps:next(maps:iterator(ResCircuit)), []),
 	compute(Interval, InfluenceFnCircuit).
 
-%influence({C, _ , Iter }, Acc) ->
-%		{ok, InflFn} = apply(resource_instance, get_flow_influence, [C]),
-%		influence(maps:next(Iter), [ InflFn | Acc ] );
+influence({C, _ , Iter }, Acc) ->
+		{ok, InflFn} = apply(resource_instance, get_flow_influence, [C]),
+		influence(maps:next(Iter), [ InflFn | Acc ] );
 
 influence(none, Acc) -> {ok, Acc}. 
 
