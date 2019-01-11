@@ -16,6 +16,7 @@ start(_Type, _Args) ->
                                                 {"/square_installations/pipes", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes/pipes.html", [{mimetypes, cow_mimetypes, all}]}},
                                                 {"/square_installations/pipes/image", hello_image_handler, []},
                                                 {"/square_installations/pipes/create", hello_square_create_handler, []},
+                                                {"/square_installations/pipes/terminate", hello_square_terminate_handler, []},
 
                                                 %pipes_pump
                                                 {"/square_installations/pipes_pump", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump/pipes_pump.html", [{mimetypes, cow_mimetypes, all}]}},
