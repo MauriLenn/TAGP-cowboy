@@ -2,14 +2,32 @@
 <head>
         <meta charset=\"utf-8\">
         <title>Pipes_Pump</title>
-        
+        <style>
+            button{
+              margin-top: 20px;
+            }
+          </style>
 </head>
 <body>
     <div>
         <h1>Installation with a pump</h1>
             <p> this installation has only pipes with connectors<br> 
                 In the square, there is a pump that keeps the fluidum flowing in the installation</p>
+
+        <form role="form" method="POST" action="/square_installations/pipes_pump/create">
+            <button type="submit" class="btn btn-default">create installation</button>
+        </form>
+      
+        <button id="pipes" onclick="getImage()"> get image </button>
+
+        <form role="form" method="POST" action="/square_installations/pipes_pump/terminate">
+            <button type="submit" class="btn btn-default">terminate installation</button>
+        </form>
     </div>
- 
+    <script type="text/javascript"> 
+        function getImage() {
+             window.location.href = "http://localhost:8080/square_installations/pipes_pump/image";
+            }
+      </script>
 </body>
 </html>

@@ -14,18 +14,27 @@ start(_Type, _Args) ->
 
                                                 %pipes
                                                 {"/square_installations/pipes", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes/pipes.html", [{mimetypes, cow_mimetypes, all}]}},
-                                                {"/square_installations/pipes/image", hello_image_handler, []},
+                                                {"/square_installations/pipes/image", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes/display_image.html", [{mimetypes, cow_mimetypes, all}]}},
                                                 {"/square_installations/pipes/create", hello_square_create_handler, []},
                                                 {"/square_installations/pipes/terminate", hello_square_terminate_handler, []},
 
                                                 %pipes_pump
                                                 {"/square_installations/pipes_pump", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump/pipes_pump.html", [{mimetypes, cow_mimetypes, all}]}},
+                                                {"/square_installations/pipes_pump/image", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump/display_image.html", [{mimetypes, cow_mimetypes, all}]}},
+                                                {"/square_installations/pipes_pump/create", hello_square_p_create_handler, []},
+                                                {"/square_installations/pipes_pump/terminate", hello_square_terminate_handler, []},
 
                                                 %pipes_pump_flowmeter
                                                 {"/square_installations/pipes_pump_flowmeter", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump_flowmeter/pipes_pump_flowmeter.html", [{mimetypes, cow_mimetypes, all}]}},
+                                                {"/square_installations/pipes_pump_flowmeter/image", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump_flowmeter/display_image.html", [{mimetypes, cow_mimetypes, all}]}},
+                                                {"/square_installations/pipes_pump_flowmeter/create", hello_square_p_f_create_handler, []},
+                                                {"/square_installations/pipes_pump_flowmeter/terminate", hello_square_terminate_handler, []},
 
                                                 %pipes_pump_flowmeter_heatexchanger
-                                                {"/square_installations/pipes_pump_flowmeter_heatexchanger", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump_flowmeter_heatexchanger/pipes_pump_flowmeter_heatexchanger.html", [{mimetypes, cow_mimetypes, all}]}}
+                                                {"/square_installations/pipes_pump_flowmeter_heatexchanger", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump_flowmeter_heatexchanger/pipes_pump_flowmeter_heatexchanger.html", [{mimetypes, cow_mimetypes, all}]}},
+                                                {"/square_installations/pipes_pump_flowmeter_heatexchanger/image", cowboy_static, {priv_file, hello_erlang2, "square_installations/pipes_pump_flowmeter_heatexchanger/display_image.html", [{mimetypes, cow_mimetypes, all}]}},
+                                                {"/square_installations/pipes_pump_flowmeter_heatexchanger/create", hello_square_p_f_e_create_handler, []},
+                                                {"/square_installations/pipes_pump_flowmeter_heatexchanger/terminate", hello_square_terminate_handler, []}
                                         ]}
                                     ]),
     
